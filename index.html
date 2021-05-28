@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Style Sheet -->
     <link rel="stylesheet" href="style.css">
-    <title>NewTab</title>
+    <title>New Tab</title>
 </head>
 <body>
     <header>
@@ -33,12 +33,18 @@
     <main>
         <div id="main-content">
             <h1 id="logo">Google</h1>
+
+            
             <div class="search">
+                <div id="bar">
                 <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                <button type="submit" class="searchButton">
-                  <img src="img/Google_microphone_logo.png" alt="">
+                <button type="submit" class="voiceSearch">
+                  <img id="microphone" src="img/Google_microphone_logo.png" alt="">
                </button>
+            </div>
              </div>
+
+
              <button id="addShortcut">
                  <div class="plus-icon">
                     <i class="fas fa-plus"></i>
