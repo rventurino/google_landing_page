@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    <title>NewTab</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <ul id="nav-links">
+                <li><a href="#">Gmail</a></li>
+                <li><a href="#">Images</a></li>
+                <!--TODO
+                google apps and google account are modals 
+            See here: https://www.w3schools.com/howto/howto_css_modals.asp
+            -->
+                
+                <li><button id="google-apps"><i class="fas fa-th"></i></button></li>
+                <li><button id="google-account">r</button></li>
+            </ul>
+        </nav>
+    </header>
+    <!--There is a breakpoint @ 1,000px for main-->
+    <main>
+        <div id="main-content">
+            <h1 id="logo">Google</h1>
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+                  <img src="img/Google_microphone_logo.png" alt="">
+               </button>
+             </div>
+             <button id="addShortcut">
+                 <div class="plus-icon">
+                    <i class="fas fa-plus"></i>
+                 </div>
+                 <span>Add shortcut</span>
+             </button>
+        </div>
+        <!--Customize is oval shaped and on bottom right, will have to be positioned absolute-->
+        <button id="customize">
+            <div class="customize-text">
+                <i class="fas fa-paint-brush"></i>
+                <span>Customize</span>
+            </div>
+        </button>
+    </main>
+</body>
+</html>
