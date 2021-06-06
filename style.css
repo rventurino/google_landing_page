@@ -1,3 +1,6 @@
+@import url('http://fonts.cdnfonts.com/css/product-sans');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +14,19 @@ body{
     background-color: #333;
 }
 
-/* Nav bar */
+/*
+            
+    .-.     
+ .-,| |,-.  
+ _\ ' ' /_  
+(__     __) 
+  / . . \   
+ `-'| |`-'  
+    `-'     
+            
+ Nav bar
+ 
+ */
 
 header{
     width: 100vw;
@@ -26,19 +41,80 @@ nav{
     height: 75px;
 }
 
-#navbar{
-    width: 300px;
-}
 
 #nav-links{
-    width: 100%;
+    width: 210px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    list-style-type: none;
+    margin-right: 10px;
+    
 }
 
-/* Main Section */
+#nav-links a{
+    color: #ffe;
+    text-decoration: none;
+}
+
+#nav-links a:hover{
+    text-decoration: underline;
+}
+
+.spec-button{
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spec-button:hover{
+    background-color: rgb(116, 114, 114); ;
+}
+
+#google-apps{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    background: none;
+}
+
+#google-account{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    background-color: #512DA8ff;
+}
+
+
+/* 
+/*
+            
+    .-.     
+ .-,| |,-.  
+ _\ ' ' /_  
+(__     __) 
+  / . . \   
+ `-'| |`-'  
+    `-'     
+            
+Main Section
+ 
+*/
 
 main{
     display: flex;
@@ -60,11 +136,30 @@ main{
     justify-content: space-around;
 }
 
+.main-group{
+    width: 100%;
+    position: absolute;
+    top: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 #logo{
-    font-size: 10vw;
+    font-family: 'Product Sans', sans-serif;
+    font-size: 90px;
+    font-weight: 500;
+    margin-bottom: 38px;
+}
+
+#logo span{
+    position: absolute;
+    transform: rotate(-15deg);
+    
 }
 #bar{
-    height: 70% ;
+    height: 100%;
     width: 100%;
     
     display: flex;
@@ -72,12 +167,13 @@ main{
     justify-content: center;
 }
 .search{
-    height: 10vw;
+    height: 45px;
     width: 70%;
+    max-width: 560px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    margin-bottom: 38px;
 }
 .voiceSearch{
     height: 100%;
@@ -105,4 +201,44 @@ main{
     padding-left: 30px;
 }
 
+#addShortcut{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 15px;
+}
 
+#addShortcut:hover{
+    background-color: rgb(116, 114, 114); ;
+
+}
+
+.plus-icon{
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #2A2A2Aff;
+    margin-bottom: 20px;
+}
+
+.fa-plus{
+    width: 15px;
+    height: 15px;
+    
+}
+
+#addShortcut span{
+    font-size: 13px;
+}

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Style Sheet -->
     <link rel="stylesheet" href="style.css">
-    <title>New Tab</title>
+    <title>Copy: New Tab</title>
 </head>
 <body>
     <header>
@@ -24,17 +24,16 @@
             See here: https://www.w3schools.com/howto/howto_css_modals.asp
             -->
                 
-                <li><button id="google-apps"><i class="fas fa-th"></i></button></li>
-                <li><button id="google-account">r</button></li>
+                <li class="spec-button"><button id="google-apps"><i class="fas fa-th"></i></button></li>
+                <li class="spec-button"><button id="google-account">r</button></li>
             </ul>
         </nav>
     </header>
     <!--There is a breakpoint @ 1,000px for main-->
     <main>
         <div id="main-content">
-            <h1 id="logo">Google</h1>
-
-            
+            <div class="main-group">
+            <h1 id="logo">Googl<span>e</span></h1>
             <div class="search">
                 <div id="bar">
                 <input type="text" class="searchTerm" placeholder="What are you looking for?">
@@ -44,13 +43,15 @@
             </div>
              </div>
 
-
              <button id="addShortcut">
-                 <div class="plus-icon">
-                    <i class="fas fa-plus"></i>
-                 </div>
-                 <span>Add shortcut</span>
-             </button>
+                <div class="plus-icon">
+                   <i class="fas fa-plus"></i>
+                </div>
+                <span>Add shortcut</span>
+            </button>
+            </div>
+
+             
         </div>
         <!--Customize is oval shaped and on bottom right, will have to be positioned absolute-->
         <button id="customize">
