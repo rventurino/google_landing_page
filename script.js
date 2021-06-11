@@ -6,3 +6,7 @@ Code modals:
     b.) modal for accounts tab, should be straightforward with flex
     c.) The customize menu is gonna be the real deal here, lots going on
     page must be customizable and use local storage to save selected settings
+
+
+    google apps modal
+*/

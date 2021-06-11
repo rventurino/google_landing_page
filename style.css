@@ -151,6 +151,8 @@ main{
     font-size: 90px;
     font-weight: 500;
     margin-bottom: 38px;
+    position: relative;
+    right: 30px;
 }
 
 #logo span{
@@ -174,6 +176,14 @@ main{
     align-items: center;
     justify-content: center;
     margin-bottom: 38px;
+}
+
+#search-bar-textarea{
+    font-size: 15px;
+}
+
+#search-bar-textarea:focus{
+    outline: none;
 }
 .voiceSearch{
     height: 100%;
@@ -242,3 +252,51 @@ main{
 #addShortcut span{
     font-size: 13px;
 }
+
+/* customize button and menu */
+
+/* Dimensions 
+
+height: 33px
+width: 120px
+font-size:
+distance from bottom: 17px
+distance from right:  17px
+
+*/
+
+#customize{
+    position: absolute;
+    bottom: 17px;
+    right: 17px;
+    width: 120px;
+    height: 33px;
+    border: none;
+    border-radius: 16px;
+    color: #4285F4;
+    background-color: white;
+}
+
+#customize i {
+    margin-right: 5px;
+}
+
+#customize:hover{
+    cursor: pointer;
+    background-color: #e4eef5;
+}
+
+
+/*
+Modals
+
+#google-apps
+div 1: 3x6 grid
+a grey line
+div 2: 3x6 grid
+button: more from google
+
+#google-account
+
+
+*/
