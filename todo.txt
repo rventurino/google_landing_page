@@ -1,0 +1,64 @@
+Code modals:
+    a.) gather icons:
+    row 1
+    - google accounts
+    - G for google search ++++
+    - My Business logo
+    row 2
+    - maps
+    - youtube 
+    - play store 
+    row 3
+    - news 
+    - gmail ++++
+    - meet
+    row 4
+    - chat
+    - contacts
+    - drive ++++
+    row 5
+    - calendar
+    - translate
+    - photos
+    row 6 
+    - duo ++++
+    - shopping
+    ====== LINE ====== 
+    row 7
+    - finance
+    - docs
+    - sheets
+    row 8
+    - slides
+    - books
+    - blogger
+    row 9
+    - classroom
+    - earth
+    - collections
+    row 10
+    - arts and crafts
+    - google ads
+    - podcasts
+    row 11
+    - stadia
+    - google 1
+
+    - travel
+    - forms ++++
+    ==================
+    =More from google=
+    ==================
+
+    items are 84x84px w/ 6px padding
+    entire box is about 280 px wide w/ about 20-25px padding
+    box is about 380 px tall
+
+    outside: #apps-modal 280 x 380
+    inside: #apps-inner (the ul) 128px * 100% tall
+    logos: <li> IMAGE <span .caption> label </span> </li>
+        ((width 84x84 display flex))
+
+    b.) modal for accounts tab, should be straightforward with flex
+    c.) The customize menu is gonna be the real deal here, lots going on
+    page must be customizable and use local storage to save selected settings
