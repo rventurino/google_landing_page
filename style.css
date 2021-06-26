@@ -285,8 +285,99 @@ distance from right:  17px
     cursor: pointer;
     background-color: #e4eef5;
 }
+/* APPS MODAL */
 
+#apps-modal{
+    width: 300px;
+    height: 440px;
+    
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
+    border-radius: 15px;
+}
+#apps-modal::-webkit-scrollbar {
+    width: 11px;
+    
+}
+
+#apps-modal::-webkit-scrollbar-track {
+    background-color: transparent;
+    padding: 5px;
+}
+
+#apps-modal::-webkit-scrollbar-thumb {
+    
+    background-color: lightgray;
+    border-right: 4px transparent solid;
+    border-top: 8px transparent solid;
+    border-bottom: 8px transparent solid;
+    background-clip: padding-box;
+    border-radius: 3px;
+    width: 7px;
+    background-clip: padding-box;
+    
+}
+
+#apps-inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#apps-inner li{
+    width: 20%;
+    
+    margin: 15px;
+    padding: 0;
+    
+
+}
+
+#apps-inner li a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    
+}
+
+#apps-inner img{
+    height: 45px;
+    width: 45px;
+}
+
+#apps-inner li .caption {
+    margin-top: 5px;
+    font-size: 15px;
+    height: 15px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+#apps-inner li .caption:hover{
+    text-overflow: inherit;
+    white-space:normal;
+    overflow: visible;
+}
 /*
 Modals
 
