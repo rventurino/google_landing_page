@@ -17,14 +17,28 @@
     <header>
         <nav id="navbar">
             <ul id="nav-links">
-                <li><a href="#">Gmail</a></li>
-                <li><a href="#">Images</a></li>
+                <li class= "text"><a href="#">Gmail</a></li>
+                <li class="text"><a href="#">Images</a></li>
                 <!--TODO
                 google apps and google account are modals 
             See here: https://www.w3schools.com/howto/howto_css_modals.asp
             -->
-                
-                <li class="spec-button"><button id="google-apps"><i class="fas fa-th"></i></button></li>
+                <!--Had to use CSS for the button couldn't find one as image elsewhere-->
+                <li class="spec-button"><button id="google-apps">
+                    <div class="container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </button></li>
                 <li class="spec-button"><button id="google-account">r</button></li>
             </ul>
         </nav>
@@ -79,10 +93,10 @@
             <li><a href=""><img src="img/google_apps/meet.png" alt=""><span class="caption">Meet</span></a></li>
 
             <li><a href=""><img src="img/google_apps/chat.png" alt=""><span class="caption">Chat</span></a></li>
-            <li><a href=""><i class="fas fa-user-circle"></i><span class="caption">Contacts</span></a></li>
+            <li><a href=""><i id="contacts-link" class="fas fa-user-circle"></i><span class="caption">Contacts</span></a></li>
             <li><a href=""><img src="img/google_apps/drive.png" alt=""><span class="caption">Drive</span></a></li>
 
-            <li><a href=""><img src="img/google_apps/chat.png" alt=""><span class="caption">Calendar</span></a></li> 
+            <li><a href=""><img src="img/google_apps/calendar.png" alt=""><span class="caption">Calendar</span></a></li> 
             <li><a href=""><img src="img/google_apps/translate.png" alt=""><span class="caption">Translate</span></a></li>
             <li><a href=""><img src="img/google_apps/photos.png" alt=""><span class="caption">Photos</span></a></li>
 

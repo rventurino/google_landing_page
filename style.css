@@ -14,6 +14,9 @@ body{
     background-color: #333;
 }
 
+.text{
+    font-size: 13px;
+}
 /*
             
     .-.     
@@ -36,7 +39,7 @@ header{
 }
 nav{
     position: absolute;
-    top: 25px;
+    top: 10px;
     right: 0px;
     height: 75px;
 }
@@ -63,15 +66,16 @@ nav{
 
 .spec-button{
     border-radius: 50%;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .spec-button:hover{
-    background-color: rgb(116, 114, 114); ;
+    background-color: rgba(116, 114, 114, 0.445); 
+    
 }
 
 #google-apps{
@@ -85,7 +89,32 @@ nav{
 	cursor: pointer;
 	outline: inherit;
     background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+/* Custom apps nav button */
+#google-apps .container {
+    
+    margin: 0;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: none;
+}
+
+#google-apps .container .circle {
+    background-color: white;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+}
+
 
 #google-account{
     height: 35px;
@@ -98,7 +127,9 @@ nav{
 	cursor: pointer;
 	outline: inherit;
     background-color: #512DA8ff;
+    font-weight: bold;
 }
+
 
 
 /* 
@@ -285,15 +316,21 @@ distance from right:  17px
     cursor: pointer;
     background-color: #e4eef5;
 }
+/*
+===============================================
+===============================================
+===============================================
+MODALS ======== MODALS =========== MODALS =====
+
 /* APPS MODAL */
 
 #apps-modal{
-    width: 300px;
+    width: 330px;
     height: 440px;
     
     position: absolute;
     top: 70px;
-    right: 70px;
+    right: 5px;
     
     background-color: white;
     overflow-y: scroll;
@@ -318,10 +355,9 @@ distance from right:  17px
     border-top: 8px transparent solid;
     border-bottom: 8px transparent solid;
     background-clip: padding-box;
-    border-radius: 3px;
+    border-radius: 5px;
     width: 7px;
     background-clip: padding-box;
-    
 }
 
 #apps-inner{
@@ -331,20 +367,22 @@ distance from right:  17px
     flex-wrap: wrap;
     width: 100%;
     height: fit-content;
-    
     list-style-type: none;
-    margin: 0;
+    margin-top: 20px;
+    margin-left: 3%;
     padding: 0;
     
 }
 
 #apps-inner li{
-    width: 20%;
-    
-    margin: 15px;
-    padding: 0;
+    width: 32%;
+    height: 100px;
     
 
+}
+#apps-inner li:hover{
+    background-color: rgb(226, 224, 224);
+    border-radius: 10px;
 }
 
 #apps-inner li a{
@@ -355,6 +393,7 @@ distance from right:  17px
     justify-content: center;
     flex-direction: column;
     text-decoration: none;
+    padding-bottom: 10px;
     
 }
 
@@ -365,8 +404,8 @@ distance from right:  17px
 
 #apps-inner li .caption {
     margin-top: 5px;
-    font-size: 15px;
-    height: 15px;
+    font-size: 12px;
+    color: #333;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -377,6 +416,41 @@ distance from right:  17px
     text-overflow: inherit;
     white-space:normal;
     overflow: visible;
+    
+}
+
+#apps-inner .line {
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    border-bottom: 1px dotted gray;
+    margin-bottom: 20px;
+    
+}
+
+/*custom styling for account and contact buttons
+in the apps modal */
+
+#contacts-link{
+    color: #4267B2;
+    font-size: 40px;
+}
+#modal-account-logo{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+    font-size: 30px;
+	cursor: pointer;
+	outline: inherit;
+    background-color: #512DA8ff;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /*
 Modals
