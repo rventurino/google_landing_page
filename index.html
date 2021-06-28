@@ -1,139 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Style Sheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Copy: New Tab</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav id="navbar">
-            <ul id="nav-links">
-                <li class= "text"><a href="#">Gmail</a></li>
-                <li class="text"><a href="#">Images</a></li>
-                <!--TODO
+      <nav id="navbar">
+        <ul id="nav-links">
+          <li class="text"><a href="#">Gmail</a></li>
+          <li class="text"><a href="#">Images</a></li>
+          <!--TODO
                 google apps and google account are modals 
             See here: https://www.w3schools.com/howto/howto_css_modals.asp
             -->
-                <!--Had to use CSS for the button couldn't find one as image elsewhere-->
-                <li class="spec-button"><button id="google-apps">
-                    <div class="container">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
+          <!--Had to use CSS for the button couldn't find one as image elsewhere-->
+          <li class="spec-button">
+            <button id="google-apps">
+              <div class="container">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
 
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
 
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                    </div>
-                </button></li>
-                <li class="spec-button"><button id="google-account">r</button></li>
-            </ul>
-        </nav>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+              </div>
+            </button>
+          </li>
+          <li class="spec-button"><button id="google-account">r</button></li>
+        </ul>
+      </nav>
     </header>
     <!--There is a breakpoint @ 1,000px for main-->
     <main>
-        <div id="main-content">
-            <div class="main-group">
-            <h1 id="logo">Googl<span>e</span></h1>
-            <div class="search">
-                <div id="bar">
-                <input type="text" id="search-bar-textarea" class="searchTerm" placeholder="What are you looking for?">
-                <button type="submit" class="voiceSearch">
-                  <img id="microphone" src="img/Google_microphone_logo.png" alt="">
-               </button>
+      <div id="main-content">
+        <div class="main-group">
+          <h1 id="logo">Googl<span>e</span></h1>
+          <div class="search">
+            <div id="bar">
+              <input
+                type="text"
+                id="search-bar-textarea"
+                class="searchTerm"
+                placeholder="What are you looking for?"
+              />
+              <button type="submit" class="voiceSearch">
+                <img
+                  id="microphone"
+                  src="img/Google_microphone_logo.png"
+                  alt=""
+                />
+              </button>
             </div>
-             </div>
+          </div>
 
-             <button id="addShortcut">
-                <div class="plus-icon">
-                   <i class="fas fa-plus"></i>
-                </div>
-                <span>Add shortcut</span>
-            </button>
+          <button id="addShortcut">
+            <div class="plus-icon">
+              <i class="fas fa-plus"></i>
             </div>
-
-             <!---->
+            <span>Add shortcut</span>
+          </button>
         </div>
-        <!--Customize is oval shaped and on bottom right, will have to be positioned absolute-->
-        
+
+        <!---->
+      </div>
+      <!--Customize is oval shaped and on bottom right, will have to be positioned absolute-->
     </main>
 
     <button id="customize">
-        <div class="customize-text">
-            <i class="fas fa-paint-brush"></i>
-            <span>Customize</span>
-        </div>
+      <div class="customize-text">
+        <i class="fas fa-paint-brush"></i>
+        <span>Customize</span>
+      </div>
     </button>
-
-    <section id="apps-modal">
+    
+    <div id="apps-modal-container" class="">
+      <section id="apps-modal">
         <ul id="apps-inner">
-            <li><a href=""><span id="modal-account-logo">r</span><span class="caption">Account</span></a></li>
-            <li><a href=""><img src="img/google_apps/googlesearch.png" alt=""><span class="caption">Search</span></a></li>
-            <li><a href=""><img src="img/google_apps/mybusiness.png" alt=""><span class="caption">My Business</span></a></li>
+          <li>
+            <a href=""
+              ><span id="modal-account-logo">r</span
+              ><span class="caption">Account</span></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/googlesearch.png" alt="" /><span
+                class="caption"
+                >Search</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/mybusiness.png" alt="" /><span
+                class="caption"
+                >My Business</span
+              ></a
+            >
+          </li>
 
-            <li><a href=""><img src="img/google_apps/maps.png" alt=""><span class="caption">Maps</span></a></li>
-            <li><a href=""><img src="img/google_apps/youtube.png" alt=""><span class="caption">YouTube</span></a></li>
-            <li><a href=""><img src="img/google_apps/playstore.png" alt=""><span class="caption">Play</span></a></li>
-            
-            <li><a href=""><img src="img/google_apps/news.png" alt=""><span class="caption">News</span></a></li>
-            <li><a href=""><img src="img/google_apps/gmail.png" alt=""><span class="caption">Gmail</span></a></li>
-            <li><a href=""><img src="img/google_apps/meet.png" alt=""><span class="caption">Meet</span></a></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/maps.png" alt="" /><span
+                class="caption"
+                >Maps</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/youtube.png" alt="" /><span
+                class="caption"
+                >YouTube</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/playstore.png" alt="" /><span
+                class="caption"
+                >Play</span
+              ></a
+            >
+          </li>
 
-            <li><a href=""><img src="img/google_apps/chat.png" alt=""><span class="caption">Chat</span></a></li>
-            <li><a href=""><i id="contacts-link" class="fas fa-user-circle"></i><span class="caption">Contacts</span></a></li>
-            <li><a href=""><img src="img/google_apps/drive.png" alt=""><span class="caption">Drive</span></a></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/news.png" alt="" /><span
+                class="caption"
+                >News</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/gmail.png" alt="" /><span
+                class="caption"
+                >Gmail</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/meet.png" alt="" /><span
+                class="caption"
+                >Meet</span
+              ></a
+            >
+          </li>
 
-            <li><a href=""><img src="img/google_apps/calendar.png" alt=""><span class="caption">Calendar</span></a></li> 
-            <li><a href=""><img src="img/google_apps/translate.png" alt=""><span class="caption">Translate</span></a></li>
-            <li><a href=""><img src="img/google_apps/photos.png" alt=""><span class="caption">Photos</span></a></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/chat.png" alt="" /><span
+                class="caption"
+                >Chat</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><i id="contacts-link" class="fas fa-user-circle"></i
+              ><span class="caption">Contacts</span></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/drive.png" alt="" /><span
+                class="caption"
+                >Drive</span
+              ></a
+            >
+          </li>
 
-            <li><a href=""><img src="img/google_apps/duo.png" alt=""><span class="caption">Duo</span></a></li>
-            <li><a href=""><img src="img/google_apps/shopping.png" alt=""><span class="caption">Shopping</span></a></li>
-            <li></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/calendar.png" alt="" /><span
+                class="caption"
+                >Calendar</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/translate.png" alt="" /><span
+                class="caption"
+                >Translate</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/photos.png" alt="" /><span
+                class="caption"
+                >Photos</span
+              ></a
+            >
+          </li>
 
-            <div class="line"></div>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/duo.png" alt="" /><span class="caption"
+                >Duo</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/shopping.png" alt="" /><span
+                class="caption"
+                >Shopping</span
+              ></a
+            >
+          </li>
+          <li></li>
 
-            <li><a href=""><img src="img/google_apps/finance.svg" alt=""><span class="caption">Finance</span></a></li>
-            <li><a href=""><img src="img/google_apps/docs.png" alt=""><span class="caption">Docs</span></a></li>
-            <li><a href=""><img src="img/google_apps/sheets.png" alt=""><span class="caption">Sheets</span></a></li>
+          <div class="line"></div>
 
-            <li><a href=""><img src="img/google_apps/slides.png" alt=""><span class="caption">Slides</span></a></li>
-            <li><a href=""><img src="img/google_apps/books.png" alt=""><span class="caption">Books</span></a></li>
-            <li><a href=""><img src="img/google_apps/blogger.png" alt=""><span class="caption">Blogger</span></a></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/finance.svg" alt="" /><span
+                class="caption"
+                >Finance</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/docs.png" alt="" /><span
+                class="caption"
+                >Docs</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/sheets.png" alt="" /><span
+                class="caption"
+                >Sheets</span
+              ></a
+            >
+          </li>
 
-            <li><a href=""><img src="img/google_apps/hangouts.png" alt=""><span class="caption">Hangouts</span></a></li>
-            <li><a href=""><img src="img/google_apps/keep.png" alt=""><span class="caption">Keep</span></a></li>
-            <li><a href=""><img src="img/google_apps/jamboard.png" alt=""><span class="caption">Jamboard</span></a></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/slides.png" alt="" /><span
+                class="caption"
+                >Slides</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/books.png" alt="" /><span
+                class="caption"
+                >Books</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/blogger.png" alt="" /><span
+                class="caption"
+                >Blogger</span
+              ></a
+            >
+          </li>
 
-            <li><a href=""><img src="img/google_apps/classoom.png" alt=""><span class="caption">Classroom</span></a></li>
-            <li><a href=""><img src="img/google_apps/earth.png" alt=""><span class="caption">Earth</span></a></li>
-            <li><a href=""><img src="img/google_apps/collections.svg" alt=""><span class="caption">Collections</span></a></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/hangouts.png" alt="" /><span
+                class="caption"
+                >Hangouts</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/keep.png" alt="" /><span
+                class="caption"
+                >Keep</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/jamboard.png" alt="" /><span
+                class="caption"
+                >Jamboard</span
+              ></a
+            >
+          </li>
 
-            <li><a href=""><img src="img/google_apps/arts.png" alt=""><span class="caption">Arts and Culture</span></a></li>
-            <li><a href=""><img src="img/google_apps/ads.png" alt=""><span class="caption">Google Ads</span></a></li>
-            <li><a href=""><img src="img/google_apps/podcasts.png" alt=""><span class="caption">Podcasts</span></a></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/classoom.png" alt="" /><span
+                class="caption"
+                >Classroom</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/earth.png" alt="" /><span
+                class="caption"
+                >Earth</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/collections.svg" alt="" /><span
+                class="caption"
+                >Collections</span
+              ></a
+            >
+          </li>
 
-            <li><a href=""><img src="img/google_apps/stadia.png" alt=""><span class="caption">Stadia</span></a></li>
-            <li><a href=""><img src="img/google_apps/one.png" alt=""><span class="caption">Google One</span></a></li>
-            <li><a href=""><img src="img/google_apps/travel.svg" alt=""><span class="caption">Travel</span></a></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/arts.png" alt="" /><span
+                class="caption"
+                >Arts and Culture</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/ads.png" alt="" /><span class="caption"
+                >Google Ads</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/podcasts.png" alt="" /><span
+                class="caption"
+                >Podcasts</span
+              ></a
+            >
+          </li>
 
-            <li><a href=""><img src="img/google_apps/forms.png" alt=""><span class="caption">Forms</span></a></li>
-            <li></li>
-            <li></li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/stadia.png" alt="" /><span
+                class="caption"
+                >Stadia</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/one.png" alt="" /><span class="caption"
+                >Google One</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><img src="img/google_apps/travel.svg" alt="" /><span
+                class="caption"
+                >Travel</span
+              ></a
+            >
+          </li>
+
+          <li>
+            <a href=""
+              ><img src="img/google_apps/forms.png" alt="" /><span
+                class="caption"
+                >Forms</span
+              ></a
+            >
+          </li>
+          <li></li>
+          <li></li>
         </ul>
-    </section>
-</body>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
