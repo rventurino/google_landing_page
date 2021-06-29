@@ -1,10 +1,3 @@
-/* TODO
-
-
-
-    google apps modal
-*/
-
 const appsModalButton = document.getElementById("google-apps");
 const appsModal = document.getElementById("apps-modal-container");
 const accountModalButton = document.getElementById("google-account");
@@ -37,7 +30,6 @@ window.onclick = () => {
 /* stop event loop propagation */
 accountModalButton.addEventListener('click', (e) => {
     e.stopPropagation();
-
 })
 
 appsModalButton.addEventListener('click', (e) => {

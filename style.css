@@ -207,7 +207,6 @@ main{
 #logo span{
     position: absolute;
     transform: rotate(-15deg);
-    
 }
 #bar{
     height: 100%;
@@ -352,7 +351,6 @@ MODALS ======== MODALS =========== MODALS =====
     border-radius: 10px;
     pointer-events: none;
     opacity: 0;
-    z-index: 100;
 }
 #apps-modal-container.show{
     pointer-events: auto;
@@ -480,7 +478,15 @@ in the apps modal */
     justify-content: center;
 }
 
-/* Accounts MODAL */
+/* 
+    .-.     
+ .-,| |,-.  
+ _\ ' ' /_  
+(__     __) 
+  / . . \   
+ `-'| |`-'  
+    `-'  
+Accounts MODAL */
 #google-accounts-modal{
     width: 380px;
     height: 400px;
@@ -634,26 +640,185 @@ in the apps modal */
     margin: 0 5px 0 5px;
 }
 /*
-Modals
+    .-.     
+ .-,| |,-.  
+ _\ ' ' /_  
+(__     __) 
+  / . . \   
+ `-'| |`-'  
+    `-'  
 
-#google-apps
-div 1: 3x6 grid
-a grey line
-div 2: 3x6 grid
-button: more from google
-
-#google-account
-div 1:
-flex 
-name logo
-circle camera logo (i tag)
-name
-email
-button: manage your google account
-
-div 2: 
-add another account
-height
-
-
+CUSTOMIZER MODAL
 */
+
+#customizer-underlay{
+    z-index: 1;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#customizer-modal{
+    z-index: 2;
+    width: 800px;
+    height: 520px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+}
+#heading{
+    height: 15%;
+    width: 100%;
+    color:#333 ;
+    position: relative;
+}
+#heading h4{
+    position: absolute;
+    left: 25%;
+    bottom: 10px;
+}
+#middle{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navigation{
+    width: 25%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    color: rgb(114, 113, 113);
+}
+#navigation ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    width: 120%;
+    left: -40%;
+}
+#navigation ul li{
+    height: 40px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#navigation ul li button{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    border-radius: 25px;
+    color: rgb(68, 68, 68);
+}
+#navigation ul li button i{
+    margin-left: 105px;
+    margin-right: 5px;
+}
+#navigation ul li button:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+#navigation ul li button:active{
+    background-color: lightblue;
+}
+
+
+
+/*backgrounds section */
+#backgrounds{
+    width: auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 175px);
+    grid-template-rows: repeat(3, 175px);
+    grid-gap: 10px;
+    color: rgb(114, 113, 113);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 10px;
+    
+}
+.grid-item .img-contianer{
+    height: 175px;
+    width: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    color: rgb(114, 113, 113);
+
+}
+.grid-item img{
+    width: 200%;
+}
+
+.grid-item:hover{
+    cursor: pointer;
+}
+
+#shortcuts{
+    width: 75%;
+    height: 100%;
+    display: none;
+}
+#color{
+    width: 75%;
+    height: 100%;
+    display: none;
+}
+#footer{
+    height: 15%;
+    width: 100%;
+    position: relative;
+}
+#footer .button-group{
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    height: 35px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#footer .button-group button{
+    height: 100%;
+    width: 47.5%;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#footer .button-group button:hover{
+    cursor: pointer;
+}
+
+#footer .button-group #done{
+    color: rgb(37, 37, 228);
+    border: 2px solid var(--borderGray);
+    background-color: transparent;
+}
+
+
+#footer .button-group #cancel{
+    color: white;
+    border: none;
+    background-color: rgb(37, 37, 228);
+}
