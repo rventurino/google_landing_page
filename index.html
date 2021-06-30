@@ -28,11 +28,7 @@
         <ul id="nav-links">
           <li class="text"><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">Gmail</a></li>
           <li class="text"><a href="https://www.google.com/imghp?hl=en&tab=ri&ogbl">Images</a></li>
-          <!--TODO
-                google apps and google account are modals 
-            See here: https://www.w3schools.com/howto/howto_css_modals.asp
-            -->
-          <!--Had to use CSS for the button couldn't find one as image elsewhere-->
+          
           <li class="spec-button">
             <button id="google-apps">
               <div class="container">
@@ -58,7 +54,16 @@
     <main>
       <div id="main-content">
         <div class="main-group">
-          <h1 id="logo">Googl<span>e</span></h1>
+          <div id="logo">
+            <div class="default-logo">
+              <h1 id="g">G</h1>
+              <h1 id="o">o</h1>
+              <h1 id="o2">o</h1>
+              <h1 id="g2">g</h1>
+              <h1 id="l">l</h1>
+              <h1 class="e">e</h1>
+            </div>
+          </div>
           <div class="search">
             <div id="bar">
               <input
@@ -455,7 +460,7 @@
                             Customizer Modal Begin
       =========================================================
     -->
-    <div id="customizer-underlay">
+    <div id="customizer-underlay" class="">
       <div id="customizer-modal">
         <div id="heading">
           <h4>Customize this page</h4>

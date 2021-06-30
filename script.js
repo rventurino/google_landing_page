@@ -14,6 +14,8 @@ const colorsButton = document.getElementById("colors-button");
 
 const customizeButton = document.getElementById("customize");
 const customUnderlay = document.getElementById("customizer-underlay");
+const customizerCancel = document.getElementById("cancel");
+const customizerDone = document.getElementById("done");
 
 
 //toggle apps modal
@@ -52,5 +54,27 @@ appsModalButton.addEventListener('click', (e) => {
 
 /* open the customizer*/
 customizeButton.addEventListener('click', (e) => {
-    
+    customUnderlay.classList.add("show");
 })
+
+
+/*exit and don't apply changes */
+customizerCancel.addEventListener('click', () => {
+    customUnderlay.classList.remove("show");
+})
+
+customUnderlay.addEventListener('click', () =>{
+    customUnderlay.classList.remove("show");
+
+}) 
+
+/* exit and apply changes */
+
+/* background image selection 
+            <span id="g">G</span>
+            <span id="o">o</span>
+            <span id="o2">o</span>
+            <span id="g">g</span>
+            <span id="l">l</span>
+            <span id="e">e</span>
+*/

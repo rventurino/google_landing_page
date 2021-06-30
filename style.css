@@ -12,7 +12,9 @@ UTILITY STYLES
 }
 
 :root{
+    /*borders*/
     --borderGray: rgb(201, 199, 199);
+    /*Color selector modal */
     --rich-black-fogra-29: #001219ff;
     --blue-sapphire: #005f73ff;
     --viridian-green: #0a9396ff;
@@ -23,6 +25,11 @@ UTILITY STYLES
     --mahogany: #bb3e03ff;
     --rufous: #ae2012ff;
     --ruby-red: #9b2226ff;
+    /* google colors */
+    --google-blue: #4285F4 ;
+    --google-red: #DB4437;
+    --google-yellow: #F4B400;
+    --google-green: #0F9D58;
 }
 
 body{
@@ -181,24 +188,23 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: top;
+    justify-content: center;
     height: 100vh;
     
 }
 
 #main-content{
-    height: 50vw;
+    height: 100vw;
     width: 70vw;
     max-width: 700px;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .main-group{
-    width: 100%;
+    width: 100vw;
     position: absolute;
     top: 165px;
     display: flex;
@@ -214,10 +220,37 @@ main{
     margin-bottom: 38px;
     position: relative;
     right: 30px;
+    display: flex;
+    margin-left: 50px;
 }
 
-#logo span{
-    position: absolute;
+#logo h1{
+    margin: 0;
+    padding: 0;
+    font-size: 90px;
+    font-weight: 500;
+    
+}
+.default-logo{
+    display: flex;
+}
+#logo #g{
+    color: var(--google-blue);
+}
+#logo #o{
+    color: var(--google-red);
+}
+#logo #o2{
+    color: var(--google-yellow);
+}
+#logo #g2{
+    color: var(--google-blue);
+}
+#logo #l{
+    color: var(--google-green)
+}
+#logo .e{
+    color: var(--google-red);
     transform: rotate(-15deg);
 }
 #bar{
@@ -674,8 +707,15 @@ CUSTOMIZER MODAL
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
     pointer-events: none;
+    opacity: 0;
+}
+
+#customizer-underlay.show{
+    pointer-events: auto;
+    opacity: 1;
+    animation-name: modalopen;
+    animation-duration: 0.5s;
 }
 
 #customizer-modal{
