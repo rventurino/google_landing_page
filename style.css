@@ -10,9 +10,21 @@ UTILITY STYLES
     padding: 0;
     box-sizing: border-box;
 }
+
 :root{
     --borderGray: rgb(201, 199, 199);
+    --rich-black-fogra-29: #001219ff;
+    --blue-sapphire: #005f73ff;
+    --viridian-green: #0a9396ff;
+    --middle-blue-green: #94d2bdff;
+    --medium-champagne: #e9d8a6ff;
+    --gamboge: #ee9b00ff;
+    --alloy-orange: #ca6702ff;
+    --mahogany: #bb3e03ff;
+    --rufous: #ae2012ff;
+    --ruby-red: #9b2226ff;
 }
+
 body{
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
@@ -752,6 +764,7 @@ CUSTOMIZER MODAL
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 10px;
+    display: none;
     
 }
 .grid-item .img-contianer{
@@ -774,16 +787,156 @@ CUSTOMIZER MODAL
     cursor: pointer;
 }
 
+/* SHORTCUTS MENU */
+
 #shortcuts{
     width: 75%;
     height: 100%;
     display: none;
+
 }
+
+/* Colors menu */
 #color{
     width: 75%;
     height: 100%;
-    display: none;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    
 }
+
+#color .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#color .color-btn{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    border: 2px solid lightgray;
+}
+
+#color .color-btn .left{
+    width: 50px;
+    height: 100px;
+}
+
+#color .color-btn .right{
+    width: 50px;
+    height: 100px;
+}
+/* color picker choices */
+
+/*default*/
+#color #default .left{
+    background-color: whitesmoke;
+}
+#color #default .right{
+    background-color: lightgray;
+}
+/*dark*/
+#color #dark .left{
+    background-color: lightgray;
+}
+#color #dark .right{
+    background-color: var(--rich-black-fogra-29);
+}
+/*blue-sapphre*/
+#color #blue-sapphire .left{
+    background-color: lightblue;
+}
+#color #blue-sapphire .right{
+    background-color: var(--blue-sapphire);
+}
+
+/*viridian-green*/
+#color #viridian-green .left{
+    background-color: lightgreen;
+}
+#color #viridian-green .right{
+    background-color: var(--viridian-green);
+}
+/*middle blue green*/
+#color #middle-blue-green .left{
+    background-color: white;
+}
+#color #middle-blue-green .right{
+    background-color: var(--middle-blue-green);
+}
+/*medium champagne*/
+#color #medium-champagne .left{
+    background-color: #333;
+}
+#color #medium-champagne .right{
+    background-color: var(--medium-champagne);
+}
+/*gamboge*/
+#color #gamboge .left{
+    background-color: darkgoldenrod;
+}
+#color #gamboge .right{
+    background-color: var(--gamboge);
+}
+/*mahogany*/
+#color #mahogany .left{
+    background-color: white;
+}
+#color #mahogany .right{
+    background-color: var(--mahogany);
+}
+/*rufous*/
+#color #rufous .left{
+    background-color: lightsalmon;
+}
+#color #rufous .right{
+    background-color: var(--rufous);
+}
+/*yellow*/
+#color #yellow .left{
+    background-color: white;
+}
+#color #yellow .right{
+    background-color: yellow;
+}
+/*ruby-red*/
+#color #ruby-red .left{
+    background-color: pink;
+}
+#color #ruby-red .right{
+    background-color: var(--ruby-red);
+}
+/*pink*/
+#color #pink .left{
+    background-color: white;
+}
+#color #pink .right{
+    background-color: pink;
+}
+
+/*
+:root{
+    --borderGray: rgb(201, 199, 199);
+    --rich-black-fogra-29: #001219ff;
+    --blue-sapphire: #005f73ff;
+    --viridian-green: #0a9396ff;
+    --middle-blue-green: #94d2bdff;
+    --medium-champagne: #e9d8a6ff;
+    --gamboge: #ee9b00ff;
+    --alloy-orange: #ca6702ff;
+    --mahogany: #bb3e03ff;
+    --rufous: #ae2012ff;
+    --ruby-red: #9b2226ff;
+}
+*/
 #footer{
     height: 15%;
     width: 100%;
@@ -822,3 +975,4 @@ CUSTOMIZER MODAL
     border: none;
     background-color: rgb(37, 37, 228);
 }
+
