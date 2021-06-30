@@ -674,6 +674,8 @@ CUSTOMIZER MODAL
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
+    pointer-events: none;
 }
 
 #customizer-modal{
