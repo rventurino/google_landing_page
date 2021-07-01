@@ -18,6 +18,25 @@ const customizerCancel = document.getElementById("cancel");
 const customizerDone = document.getElementById("done");
 const customizerModal= document.getElementById("customizer-modal")
 
+/* background selections */
+const bgOne = document.getElementById("one");
+const bgTwo = document.getElementById("two");
+const bgThree = document.getElementById("three");
+const bgFour = document.getElementById("four")
+const bgFive = document.getElementById("five")
+const bgSix = document.getElementById("six")
+const bgSeven = document.getElementById("seven")
+const bgEight = document.getElementById("eight")
+
+const imgOne = "url(img/backgrounds/annie-spratt-3tlHKNAv1eE-unsplash.jpg)";
+const imgTwo = "url(img/backgrounds/claudio-schwarz-purzlbaum-98hDglL83q0-unsplash.jpg)";
+const imgThree = "url(img/backgrounds/dustin-humes-P326A4p7aeE-unsplash.jpg)";
+const imgFour = "url(img/backgrounds/julien-riedel-OH_MxLlYYSg-unsplash.jpg)";
+const imgFive = "url(img/backgrounds/levi-stute-OhZd1t1Fm9M-unsplash.jpg)";
+const imgSix = "url(img/backgrounds/marek-piwnicki-gA2i_h4XRJU-unsplash.jpg)";
+const imgSeven = "url(img/backgrounds/silvan-schuppisser-PGU_XpT47iw-unsplash.jpg)";
+const imgEight = "url(img/backgrounds/yang-shuo-oYprTx37G9g-unsplash.jpg)";
+
 
 //toggle apps modal
 appsModalButton.addEventListener('click', (e) => {
@@ -51,6 +70,9 @@ customizeButton.addEventListener('click', (e) => {
 
 /*exit and don't apply changes */
 customizerCancel.addEventListener('click', () => {
+    backgroundsMenu.classList.remove("show");
+    shortcutsMenu.classList.remove("show");
+    colorsMenu.classList.remove("show");
     customUnderlay.classList.remove("show");
 })
 
@@ -94,6 +116,45 @@ colorsButton.addEventListener('click', (e) => {
     shortcutsMenu.classList.remove("show");
     colorsMenu.classList.add("show");
 })
+
+/*background image selector*/
+/* one */
+bgOne.addEventListener('click', () => {
+    document.body.style.backgroundImage = imgOne;
+})
+/* two */
+bgTwo.addEventListener('click', () => {
+    document.body.style.backgroundImage = imgTwo;
+})
+/* three */
+bgThree.addEventListener('click', () => {
+    document.body.style.backgroundImage = imgThree;
+})
+/* four */
+bgFour.addEventListener('click', () => {
+    document.body.style.backgroundImage = imgFour;
+})
+/* five */
+bgFive.addEventListener('click', () => {
+    document.body.style.backgroundImage = imgFive;
+})
+/* six */
+bgSix.addEventListener('click', () => {
+    document.body.style.backgroundImage = imgSix;
+})
+/* seven */
+bgSeven.addEventListener('click', () => {
+    document.body.style.backgroundImage = imgSeven;
+})
+/* eight */
+bgEight.addEventListener('click', () => {
+    document.body.style.backgroundImage = imgEight;
+})
+
+
+
+/* color menu hover effects */
+
 /*
 
 customizerModal.addEventListener('click', () =>{
