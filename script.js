@@ -16,23 +16,21 @@ const customizeButton = document.getElementById("customize");
 const customUnderlay = document.getElementById("customizer-underlay");
 const customizerCancel = document.getElementById("cancel");
 const customizerDone = document.getElementById("done");
+const customizerModal= document.getElementById("customizer-modal")
 
 
 //toggle apps modal
 appsModalButton.addEventListener('click', (e) => {
     appsModal.classList.toggle("show")
     accountModal.classList.remove("show")
+    e.stopPropagation();
 })
-
-window.onclick = () => {
-    appsModal.classList.remove("show")
-}
-
 
 //toggle account modal
 accountModalButton.addEventListener('click', (e) => {
     accountModal.classList.toggle("show")
     appsModal.classList.remove("show")
+    e.stopPropagation();
 })
 
 window.onclick = () => {
@@ -40,14 +38,6 @@ window.onclick = () => {
     appsModal.classList.remove("show")
 }
 
-/* stop event loop propagation */
-accountModalButton.addEventListener('click', (e) => {
-    e.stopPropagation();
-})
-
-appsModalButton.addEventListener('click', (e) => {
-    e.stopPropagation();
-})
 
 
 /* CUSTOMIZER */
@@ -55,6 +45,7 @@ appsModalButton.addEventListener('click', (e) => {
 /* open the customizer*/
 customizeButton.addEventListener('click', (e) => {
     customUnderlay.classList.add("show");
+    backgroundsMenu.classList.add("show");
 })
 
 
@@ -63,10 +54,52 @@ customizerCancel.addEventListener('click', () => {
     customUnderlay.classList.remove("show");
 })
 
-customUnderlay.addEventListener('click', () =>{
-    customUnderlay.classList.remove("show");
 
+/* Customizer modal changes size to alert user to either click "cancel" or "done" to exit */
+customUnderlay.addEventListener('click', (e) =>{
+    handleClick(e, customUnderlay)
 }) 
+
+handleClick = (event, element) => {
+    if (event.target.id != element.id) {
+        event.stopPropagation();
+
+    } else{
+        customizerModal.classList.add("animate");
+        setTimeout(function(){ customizerModal.classList.remove("animate") }, 200)
+    }
+    
+  }
+
+
+/* Navigate the customizer menu */
+
+
+
+/*open backgrounds menu*/
+bgButton.addEventListener('click', (e) => {
+    shortcutsMenu.classList.remove("show");
+    colorsMenu.classList.remove("show");
+    backgroundsMenu.classList.add("show");
+})
+/*open shortcuts menu */
+scButton.addEventListener('click', (e) => {
+    backgroundsMenu.classList.remove("show");
+    colorsMenu.classList.remove("show");
+    shortcutsMenu.classList.add("show");
+})
+/*open colors menu*/
+colorsButton.addEventListener('click', (e) => {
+    backgroundsMenu.classList.remove("show");
+    shortcutsMenu.classList.remove("show");
+    colorsMenu.classList.add("show");
+})
+/*
+
+customizerModal.addEventListener('click', () =>{
+    console.log("yo")
+})
+*/
 
 /* exit and apply changes */
 

@@ -13,7 +13,7 @@ UTILITY STYLES
 
 :root{
     /*borders*/
-    --borderGray: rgb(201, 199, 199);
+    --borderGray: rgb(228, 227, 227);
     /*Color selector modal */
     --rich-black-fogra-29: #001219ff;
     --blue-sapphire: #005f73ff;
@@ -35,14 +35,20 @@ UTILITY STYLES
 body{
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
-    color: white;
-    background-color: #333;
+    color: #333;
+    background-color: white;
 }
 
 .text{
     font-size: 13px;
 }
-/*modals */
+
+.dropShadow {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
 
 
 
@@ -52,6 +58,23 @@ body{
     }
     to{
         opacity: 1;
+    }
+}
+
+@keyframes growshrink{
+    0%   {
+        width: 800px;
+    height: 520px;
+    }
+    
+    50%  {
+        width: 825px;
+        height: 545px;
+    }
+    
+    100% {
+        width: 800px;
+    height: 520px;
     }
 }
 /*
@@ -71,8 +94,8 @@ body{
 header{
     width: 100vw;
     height: 75px;
-    
-    
+    position: relative;
+    color: #333;
 }
 nav{
     position: absolute;
@@ -93,7 +116,7 @@ nav{
 }
 
 #nav-links a{
-    color: #ffe;
+    color: inherit;
     text-decoration: none;
 }
 
@@ -116,10 +139,8 @@ nav{
 }
 
 #google-apps{
-    height: 35px;
-    width: 35px;
     border-radius: 50%;
-    color: white;
+    color: inherit;
 	border: none;
 	padding: 0;
 	font: inherit;
@@ -135,16 +156,16 @@ nav{
     
     margin: 0;
     padding: 0;
-    width: 18px;
-    height: 18px;
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: none;
+    grid-gap: 2px;
 }
 
 #google-apps .container .circle {
-    background-color: white;
+    background-color: #333;
     height: 4px;
     width: 4px;
     border-radius: 50%;
@@ -189,8 +210,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    
+    height: 100vh;   
 }
 
 #main-content{
@@ -253,10 +273,13 @@ main{
     color: var(--google-red);
     transform: rotate(-15deg);
 }
+/* 
+================================================
+SEARCH BAR */
 #bar{
     height: 100%;
     width: 100%;
-    
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -283,8 +306,8 @@ main{
     width: 10%;
     margin: 0;
     padding: 0;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
     border: none;
     background-color: white;
     cursor: pointer;
@@ -321,7 +344,7 @@ main{
 }
 
 #addShortcut:hover{
-    background-color: rgb(116, 114, 114); ;
+    background-color: rgb(175, 172, 172); ;
 
 }
 
@@ -332,7 +355,7 @@ main{
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: #2A2A2Aff;
+    background-color: var(--borderGray);
     margin-bottom: 20px;
 }
 
@@ -727,6 +750,10 @@ CUSTOMIZER MODAL
     margin: 0;
     padding: 0;
 }
+#customizer-modal.animate{
+    animation-name: growshrink;
+    animation-duration: .2s;
+}
 #heading{
     height: 15%;
     width: 100%;
@@ -798,7 +825,6 @@ CUSTOMIZER MODAL
 #backgrounds{
     width: auto;
     height: 100%;
-    display: grid;
     grid-template-columns: repeat(3, 175px);
     grid-template-rows: repeat(3, 175px);
     grid-gap: 10px;
@@ -807,6 +833,9 @@ CUSTOMIZER MODAL
     overflow-x: hidden;
     padding: 10px;
     display: none;
+}
+#backgrounds.show{
+    display: grid;
     
 }
 .grid-item .img-contianer{
@@ -834,20 +863,24 @@ CUSTOMIZER MODAL
 #shortcuts{
     width: 75%;
     height: 100%;
+    pointer-events: none;
     display: none;
-
 }
-
+#shortcuts.show{
+    display: block;
+}
 /* Colors menu */
 #color{
     width: 75%;
     height: 100%;
     padding: 10px;
-    display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
-    
+    display: none;
+}
+#color.show{
+    display: grid;
 }
 
 #color .grid-item {
@@ -1010,7 +1043,6 @@ CUSTOMIZER MODAL
     border: 2px solid var(--borderGray);
     background-color: transparent;
 }
-
 
 #footer .button-group #cancel{
     color: white;
