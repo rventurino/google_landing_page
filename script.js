@@ -37,6 +37,18 @@ const imgSix = "url(img/backgrounds/marek-piwnicki-gA2i_h4XRJU-unsplash.jpg)";
 const imgSeven = "url(img/backgrounds/silvan-schuppisser-PGU_XpT47iw-unsplash.jpg)";
 const imgEight = "url(img/backgrounds/yang-shuo-oYprTx37G9g-unsplash.jpg)";
 
+const googleLogo = document.getElementById("logo-inner");
+
+window.onload = () => {
+    document.body.style.backgroundImage = localStorage.getItem("currentBackground")
+    
+    for(let i = 0; i < 6; i++){
+        googleLogo.children[i].classList.add("default")
+        console.log(i)
+    }
+    
+    console.log(googleLogo.childNodes)
+}
 
 //toggle apps modal
 appsModalButton.addEventListener('click', (e) => {
@@ -118,40 +130,66 @@ colorsButton.addEventListener('click', (e) => {
 })
 
 /*background image selector*/
+let tempBackground = null;
+let newBG = false;
+
 /* one */
 bgOne.addEventListener('click', () => {
     document.body.style.backgroundImage = imgOne;
+    tempBackground = imgOne;
+    newBG = true;
+    console.log(tempBackground)
 })
 /* two */
 bgTwo.addEventListener('click', () => {
     document.body.style.backgroundImage = imgTwo;
+    newBG = true;
+    tempBackground = imgTwo;
 })
 /* three */
 bgThree.addEventListener('click', () => {
     document.body.style.backgroundImage = imgThree;
+    newBG = true;
+    tempBackground = imgThree;
 })
 /* four */
 bgFour.addEventListener('click', () => {
     document.body.style.backgroundImage = imgFour;
+    newBG = true;
+    tempBackground = imgFour;
 })
 /* five */
 bgFive.addEventListener('click', () => {
     document.body.style.backgroundImage = imgFive;
+    newBG = true;
+    tempBackground = imgFive;
 })
 /* six */
 bgSix.addEventListener('click', () => {
     document.body.style.backgroundImage = imgSix;
+    newBG = true;
+    tempBackground = imgSix;
 })
 /* seven */
 bgSeven.addEventListener('click', () => {
     document.body.style.backgroundImage = imgSeven;
+    newBG = true;
+    tempBackground = imgSeven;
 })
 /* eight */
 bgEight.addEventListener('click', () => {
     document.body.style.backgroundImage = imgEight;
+    newBG = true;
+    tempBackground = imgEight;
 })
 
-
+/* Save state set in customizer */
+customizerDone.addEventListener('click', () => {
+    customUnderlay.classList.remove("show");
+    if(newBG){
+        localStorage.setItem("currentBackground", tempBackground);
+    }
+})
 
 /* color menu hover effects */
 

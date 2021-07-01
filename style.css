@@ -255,25 +255,32 @@ main{
 .default-logo{
     display: flex;
 }
-#logo #g{
+#logo-inner.white{
+    color: white;
+}
+#logo #g.default{
     color: var(--google-blue);
 }
-#logo #o{
+#logo #o.default{
     color: var(--google-red);
 }
-#logo #o2{
+#logo #o2.default{
     color: var(--google-yellow);
 }
-#logo #g2{
+#logo #g2.default{
     color: var(--google-blue);
 }
-#logo #l{
+#logo #l.default{
     color: var(--google-green)
 }
-#logo .e{
+#logo #e.default{
     color: var(--google-red);
     transform: rotate(-15deg);
 }
+#logo #e{
+    transform: rotate(-15deg);
+}
+
 /* 
 ================================================
 SEARCH BAR */
@@ -366,8 +373,9 @@ SEARCH BAR */
     
 }
 
-#addShortcut span{
+#addShortcutSpan{
     font-size: 13px;
+    color: #333;
 }
 
 /* customize button and menu */
