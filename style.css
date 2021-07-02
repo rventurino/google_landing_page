@@ -92,7 +92,7 @@ body{
  
  */
 
-header{
+#header{
     width: 100vw;
     height: 75px;
     position: relative;
@@ -255,9 +255,7 @@ main{
 .default-logo{
     display: flex;
 }
-#logo-inner.white{
-    color: white;
-}
+
 #logo #g.default{
     color: var(--google-blue);
 }

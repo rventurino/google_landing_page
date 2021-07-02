@@ -1,11 +1,15 @@
 Change color: 
 
 Elements
-
+/*
 header
 .circle
 #addShortcutSpan
 .logo-inner children
+*/
+const header = document.getElementsByTagName("header");
+const appsBtn = document.getElementsByClassName("circle");
+const googleLogo = document.getElementById("logo-inner");
 
 Code modals:
     a.) gather icons:
