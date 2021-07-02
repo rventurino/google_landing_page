@@ -1,3 +1,12 @@
+Change color: 
+
+Elements
+
+header
+.circle
+#addShortcutSpan
+.logo-inner children
+
 Code modals:
     a.) gather icons:
     row 1

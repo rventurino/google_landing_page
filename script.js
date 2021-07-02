@@ -43,8 +43,14 @@ window.onload = () => {
     document.body.style.backgroundImage = localStorage.getItem("currentBackground")
     
     for(let i = 0; i < 6; i++){
+        /*
         googleLogo.children[i].classList.add("default")
-        console.log(i)
+        googleLogo.children[i].classList.style.color = "white"
+        googleLogo.children[i].classList.style.color = "#333"
+        make boolean that says if theme should be light, dark, or default
+        should be inside if statement for newBG I think
+        */
+        
     }
     
     console.log(googleLogo.childNodes)
