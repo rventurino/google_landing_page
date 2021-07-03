@@ -36,7 +36,7 @@ const imgFour = "url(img/backgrounds/hermansyah-7uXn7nudorc-unsplash.jpg)";
 const imgFive = "url(img/backgrounds/levi-stute-OhZd1t1Fm9M-unsplash.jpg)";
 const imgSix = "url(img/backgrounds/marek-piwnicki-gA2i_h4XRJU-unsplash.jpg)";
 const imgSeven = "url(img/backgrounds/silvan-schuppisser-PGU_XpT47iw-unsplash.jpg)";
-const imgEight = "url(img/backgrounds/yang-shuo-oYprTx37G9g-unsplash.jpg)";
+const imgEight = "url(img/backgrounds/adam-chang-IWenq-4JHqo-unsplash.jpg)";
 
 /*important elements for style change */
 const header = document.getElementById("header");
@@ -50,9 +50,11 @@ let newBG = false;
 let textColor = 0; // 0: default 1: white 2: dark
 let currentBackground = localStorage.getItem("currentBackground");
 
+
 window.onload = () => {
     document.body.style.backgroundImage = currentBackground;
-    if(currentBackground === null){
+    if(currentBackground === "null"){
+        document.body.style.backgroundColor = "white"
         textColor = 0;
         colorChanger(textColor);
     }
@@ -218,6 +220,9 @@ colorChanger = (colorNumber) =>{
         case 0: 
             header.style.color = "#333";
             addShortcutSpan.style.color = "#333"
+            for(let i = 0; i < 6; i++){
+                googleLogo.children[i].classList.add("default")
+            }
             for(let i = 0; i < circleClass.length; i++){
                 circleClass[i].style.backgroundColor = "#333"
             }
@@ -227,7 +232,7 @@ colorChanger = (colorNumber) =>{
             googleLogo.style.color = "white";
             addShortcutSpan.style.color = "white";
             for(let i = 0; i < circleClass.length; i++){
-                circleClass[i].style.backgroundColor = "#333"
+                circleClass[i].style.backgroundColor = "white"
             }
             break;
         case 2: 
