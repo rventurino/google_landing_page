@@ -52,6 +52,10 @@ let currentBackground = localStorage.getItem("currentBackground");
 
 window.onload = () => {
     document.body.style.backgroundImage = currentBackground;
+    if(currentBackground === null){
+        textColor = 0;
+        colorChanger(textColor);
+    }
 }
 
 //toggle apps modal
@@ -237,7 +241,16 @@ colorChanger = (colorNumber) =>{
     }
 }
 
-/* color menu hover effects */
+/* color menu */
+
+
+
+
+
+
+
+
+
 
 /*
 
