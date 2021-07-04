@@ -459,23 +459,24 @@ customizeButton.addEventListener('click', (e) => {
 
 /*exit and don't apply changes */
 customizerCancel.addEventListener('click', () => {
-    backgroundsMenu.classList.remove("show");
-    shortcutsMenu.classList.remove("show");
-    colorsMenu.classList.remove("show");
-    customUnderlay.classList.remove("show");
     if(bgOrFlatColor === "" ){
         textColor = 0;
-        colorChanger(textColor);
+        colorChanger(localTextColor);
     } else if(bgOrFlatColor === "bg"){
         document.body.style.backgroundImage = currentBackground;
-        colorChanger(textColor);
+        colorChanger(localTextColor);
     } else {
         console.log(currentBGColor)
         tempBGClear();
         googleLogo.style.color = currentLogoColor;
         document.body.style.backgroundColor = currentBGColor;
-        colorChanger(textColor);
+        colorChanger(localTextColor);
     }
+    backgroundsMenu.classList.remove("show");
+    shortcutsMenu.classList.remove("show");
+    colorsMenu.classList.remove("show");
+    customUnderlay.classList.remove("show");
+    
     
 })
 
