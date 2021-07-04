@@ -38,7 +38,7 @@ const imgSix = "url(img/backgrounds/marek-piwnicki-gA2i_h4XRJU-unsplash.jpg)";
 const imgSeven = "url(img/backgrounds/silvan-schuppisser-PGU_XpT47iw-unsplash.jpg)";
 const imgEight = "url(img/backgrounds/adam-chang-IWenq-4JHqo-unsplash.jpg)";
 
-/*important elements for style change */
+/*important html elements for style change */
 const header = document.getElementById("header");
 const circleClass = document.getElementsByClassName("circle");
 const googleLogo = document.getElementById("logo-inner");
@@ -107,7 +107,7 @@ let newColor = false;
 
 
 window.onload = () => {
-    if(currentBackground === "null"){
+    if(currentBackground === "null" ){
         textColor = 0;
         colorChanger(textColor);
         console.log("temporarily disabled")
@@ -139,20 +139,6 @@ window.onclick = () => {
 
 /* CUSTOMIZER */
 
-/* open the customizer*/
-customizeButton.addEventListener('click', (e) => {
-    customUnderlay.classList.add("show");
-    backgroundsMenu.classList.add("show");
-})
-
-
-/*exit and don't apply changes */
-customizerCancel.addEventListener('click', () => {
-    backgroundsMenu.classList.remove("show");
-    shortcutsMenu.classList.remove("show");
-    colorsMenu.classList.remove("show");
-    customUnderlay.classList.remove("show");
-})
 
 
 /* Customizer modal changes size to alert user to either click "cancel" or "done" to exit */
@@ -203,12 +189,14 @@ bgOne.addEventListener('click', () => {
     document.body.style.backgroundImage = imgOne;
     tempBackground = imgOne;
     newBG = true;
+    newColor = false;
     textColor = 2;
 })
 /* two */
 bgTwo.addEventListener('click', () => {
     document.body.style.backgroundImage = imgTwo;
     newBG = true;
+    newColor = false;
     tempBackground = imgTwo;
     textColor = 1;
 })
@@ -216,6 +204,7 @@ bgTwo.addEventListener('click', () => {
 bgThree.addEventListener('click', () => {
     document.body.style.backgroundImage = imgThree;
     newBG = true;
+    newColor = false;
     tempBackground = imgThree;
     textColor = 1;
 })
@@ -223,6 +212,7 @@ bgThree.addEventListener('click', () => {
 bgFour.addEventListener('click', () => {
     document.body.style.backgroundImage = imgFour;
     newBG = true;
+    newColor = false;
     tempBackground = imgFour;
     textColor = 2;
 })
@@ -230,6 +220,7 @@ bgFour.addEventListener('click', () => {
 bgFive.addEventListener('click', () => {
     document.body.style.backgroundImage = imgFive;
     newBG = true;
+    newColor = false;
     tempBackground = imgFive;
     textColor = 1;
 })
@@ -237,6 +228,7 @@ bgFive.addEventListener('click', () => {
 bgSix.addEventListener('click', () => {
     document.body.style.backgroundImage = imgSix;
     newBG = true;
+    newColor = false;
     tempBackground = imgSix;
     textColor = 1;
 })
@@ -244,6 +236,7 @@ bgSix.addEventListener('click', () => {
 bgSeven.addEventListener('click', () => {
     document.body.style.backgroundImage = imgSeven;
     newBG = true;
+    newColor = false;
     tempBackground = imgSeven;
     textColor = 2;
 })
@@ -251,9 +244,174 @@ bgSeven.addEventListener('click', () => {
 bgEight.addEventListener('click', () => {
     document.body.style.backgroundImage = imgEight;
     newBG = true;
+    newColor = false;
     tempBackground = imgEight;
     textColor = 2;
 })
+
+/* flat color selection options (no bg image)*/
+defaultColorButton.addEventListener('click', () =>{
+    defaultColor();
+})
+defaultColor = () => {
+    textColor = 0;
+    tempBGClear();
+    document.body.style.backgroundColor = "white";
+    newBG = false;
+    newColor = true;
+    colorChanger(textColor);
+}
+darkColorButton.addEventListener('click', () =>{
+    darkColor();
+})
+
+darkColor = () => {
+    textColor = 3;
+    tempBGClear();
+    document.body.style.backgroundColor = darkBGColor;
+    googleLogo.style.color = darkLogo;
+    newBG = false;
+    newColor = true;
+}
+
+blueSapphireColorButton.addEventListener('click', () =>{
+    blueSapphire();
+})
+
+blueSapphire = () => {
+    textColor = 3;
+    tempBGClear();
+    document.body.style.backgroundColor = blueSapphireBGColor;
+    googleLogo.style.color = blueSapphireLogo;
+    newBG = false;
+    newColor = true;
+}
+
+viridianGreenColorButton.addEventListener('click', () =>{
+    viridianGreen();
+})
+
+viridianGreen = () => {
+    textColor = 3;
+    tempBGClear();
+    document.body.style.backgroundColor = viridianGreenBGColor;
+    googleLogo.style.color = viridianGreenLogo;
+    newBG = false;
+    newColor = true;
+}
+
+middleBlueGreenColorButton.addEventListener('click', () =>{
+    middleBlueGreen();
+})
+
+middleBlueGreen = () => {
+    textColor = 3;
+    tempBGClear();
+    document.body.style.backgroundColor = blueSapphireBGColor;
+    googleLogo.style.color = blueSapphireLogo;
+    newBG = false;
+    newColor = true;
+}
+
+mediumChampagneColorButton.addEventListener('click', () =>{
+    mediumChampagne();
+})
+
+mediumChampagne = () => {
+    textColor = 3;
+
+    tempBGClear();
+    document.body.style.backgroundColor = mediumChampagneBGColor;
+    googleLogo.style.color = mediumChampagneLogo;
+    newBG = false;
+    newColor = true;
+}
+
+gambogeColorButton.addEventListener('click', () =>{
+    gamboge();
+})
+
+gamboge = () => {
+    textColor = 3;
+
+    tempBGClear();
+    document.body.style.backgroundColor = gambogeBGColor;
+    googleLogo.style.color = gambogeLogo;
+    newBG = false;
+    newColor = true;
+}
+
+mahoganyColorButton.addEventListener('click', () =>{
+    mahogony();
+})
+
+mahogony = () => {
+    textColor = 3;
+
+    tempBGClear();
+    document.body.style.backgroundColor = mahoganyBGColor;
+    googleLogo.style.color = mahoganyLogo;
+    newBG = false;
+    newColor = true;
+}
+
+rufousColorButton.addEventListener('click', () =>{
+    rufous()
+})
+
+rufous = () => {
+    textColor = 3;
+
+    tempBGClear();
+    document.body.style.backgroundColor = rufousBGColor;
+    googleLogo.style.color = rufousLogo;
+    newBG = false;
+    newColor = true;
+}
+
+yellowColorButton.addEventListener('click', () =>{
+    yellow();
+})
+
+yellow = () => {
+    textColor = 3;
+
+    tempBGClear();
+    document.body.style.backgroundColor = yellowBGColor;
+    googleLogo.style.color = yellowLogo;
+    newBG = false;
+    newColor = true;
+}
+
+rubyRedColorButton.addEventListener('click', () =>{
+    rubyRed();
+})
+
+rubyRed = () => {
+    textColor = 3;
+    tempBGClear();
+    document.body.style.backgroundColor = rubyRedBGColor;
+    googleLogo.style.color = rubyRedLogo;
+    newBG = false;
+    newColor = true;
+}
+
+pinkColorButton.addEventListener('click', () =>{
+    pink();
+})
+
+pink = () => {
+    textColor = 3;
+    tempBGClear();
+    document.body.style.backgroundColor = pinkBGColor;
+    googleLogo.style.color = pinkLogo;
+    newBG = false;
+    newColor = true;
+}
+
+tempBGClear = () => {
+    document.body.style.backgroundImage = null;
+}
 /*
 header
 .circle
@@ -261,6 +419,22 @@ header
 .logo-inner children
 */
 // 0: default 1: white 2: dark
+
+/* open the customizer*/
+customizeButton.addEventListener('click', (e) => {
+    customUnderlay.classList.add("show");
+    backgroundsMenu.classList.add("show");
+})
+
+
+/*exit and don't apply changes */
+customizerCancel.addEventListener('click', () => {
+    backgroundsMenu.classList.remove("show");
+    shortcutsMenu.classList.remove("show");
+    colorsMenu.classList.remove("show");
+    customUnderlay.classList.remove("show");
+})
+
 /* Save state set in customizer */
 customizerDone.addEventListener('click', () => {
     customUnderlay.classList.remove("show");
@@ -279,6 +453,9 @@ customizerDone.addEventListener('click', () => {
     }
 })
 
+
+/*update html and css based on changes made 
+*/
 colorChanger = (colorNumber) =>{
     switch(colorNumber){
         //default state
@@ -312,7 +489,26 @@ colorChanger = (colorNumber) =>{
                 circleClass[i].style.backgroundColor = "#333"
             }
             break;
-        
+        case 3: 
+            for(let i = 0; i < 6; i++){
+                googleLogo.children[i].classList.remove("default")
+            }
+            header.style.color = "white";
+            addShortcutSpan.style.color = "white";
+            for(let i = 0; i < circleClass.length; i++){
+                circleClass[i].style.backgroundColor = "white"
+            }
+            break;
+        case 4: 
+            for(let i = 0; i < 6; i++){
+                googleLogo.children[i].classList.remove("default")
+            }
+            header.style.color = "#333";
+            addShortcutSpan.style.color = "#333";
+            for(let i = 0; i < circleClass.length; i++){
+                circleClass[i].style.backgroundColor = "#333"
+            }
+            break;
     }
 }
 
