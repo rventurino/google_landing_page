@@ -18,7 +18,7 @@ const customizerCancel = document.getElementById("cancel");
 const customizerDone = document.getElementById("done");
 const customizerModal= document.getElementById("customizer-modal")
 
-/* background selections */
+/* background image selections */
 const bgOne = document.getElementById("one");
 const bgTwo = document.getElementById("two");
 const bgThree = document.getElementById("three");
@@ -44,19 +44,75 @@ const circleClass = document.getElementsByClassName("circle");
 const googleLogo = document.getElementById("logo-inner");
 const addShortcutSpan = document.getElementById("addShortcutSpan")
 
-/*background image selector*/
+/* color buttons */
+const defaultColorButton = document.getElementById("default");
+const darkColorButton = document.getElementById("dark");
+const blueSapphireColorButton = document.getElementById("blue-sapphire");
+const viridianGreenColorButton = document.getElementById("viridian-green");
+const middleBlueGreenColorButton = document.getElementById("middle-blue-green");
+const mediumChampagneColorButton = document.getElementById("medium-champagne");
+const gambogeColorButton = document.getElementById("gamboge");
+const mahoganyColorButton = document.getElementById("mahogany");
+const rufousColorButton = document.getElementById("rufous");
+const yellowColorButton = document.getElementById("yellow");
+const rubyRedColorButton = document.getElementById("ruby-red");
+const pinkColorButton = document.getElementById("pink");
+/*
+Color selector modal 
+--rich-black-fogra-29: #001219ff;
+--blue-sapphire: #005f73ff;
+--viridian-green: #0a9396ff;
+--middle-blue-green: #94d2bdff;
+--medium-champagne: #e9d8a6ff;
+--gamboge: #ee9b00ff;
+--alloy-orange: #ca6702ff;
+--mahogany: #bb3e03ff;
+--rufous: #ae2012ff;
+--ruby-red: #9b2226ff;
+*/
+//left: logo color right:bg-color
+const darkLogo = "lightgray";
+const darkBGColor = "#001219ff";
+const blueSapphireLogo = "lightblue";
+const blueSapphireBGColor =  "#005f73ff";
+const viridianGreenLogo = "lightgreen";
+const viridianGreenBGColor = "#0a9396ff";
+const middleBlueGreenLogo = "white";
+const middleBlueGreenBGColor = "#94d2bdff";
+const mediumChampagneLogo = "#333";
+const mediumChampagneBGColor = "#e9d8a6ff";
+const gambogeLogo = "darkgoldenrod"
+const gambogeBGColor = "#ee9b00ff"
+const mahoganyLogo = "white"
+const mahoganyBGColor = "#bb3e03ff"
+const rufousLogo = "lightsalmon"
+const rufousBGColor = "#ae2012ff"
+const yellowLogo = "white"
+const yellowBGColor = "yellow"
+const rubyRedLogo = "pink"
+const rubyRedBGColor = "#9b2226ff"
+const pinkLogo = "white"
+const pinkBGColor = "pink"
+
+/*critical state selection variables*/
 let tempBackground = null;
 let newBG = false;
 let textColor = 0; // 0: default 1: white 2: dark
 let currentBackground = localStorage.getItem("currentBackground");
+let tempLogoColor = null;
+let tempBGColor = null;
+let currentLogoColor; //local storage
+let currentBGColor; //local storage
+let newColor = false;
 
 
 window.onload = () => {
-    document.body.style.backgroundImage = currentBackground;
     if(currentBackground === "null"){
-        document.body.style.backgroundColor = "white"
         textColor = 0;
         colorChanger(textColor);
+        console.log("temporarily disabled")
+    } else {
+        document.body.style.backgroundImage = currentBackground;
     }
 }
 
@@ -212,12 +268,23 @@ customizerDone.addEventListener('click', () => {
         localStorage.setItem("currentBackground", tempBackground);
         colorChanger(textColor)
     }
-    
+    else if (newColor){
+        /*
+        tempLogoColor
+        tempBGColor
+        currentLogoColor
+        currentBGColor
+        newColor
+        */
+    }
 })
 
 colorChanger = (colorNumber) =>{
     switch(colorNumber){
-        case 0: 
+        //default state
+        case 0:
+            localStorage.setItem("currentBackground", null)
+            document.body.style.backgroundColor = "white" 
             header.style.color = "#333";
             addShortcutSpan.style.color = "#333"
             for(let i = 0; i < 6; i++){
@@ -227,6 +294,7 @@ colorChanger = (colorNumber) =>{
                 circleClass[i].style.backgroundColor = "#333"
             }
             break;
+        //dark background images
         case 1: 
             header.style.color = "white";
             googleLogo.style.color = "white";
@@ -235,6 +303,7 @@ colorChanger = (colorNumber) =>{
                 circleClass[i].style.backgroundColor = "white"
             }
             break;
+        //light background images
         case 2: 
             header.style.color = "#333";
             googleLogo.style.color = "#333";
@@ -243,6 +312,7 @@ colorChanger = (colorNumber) =>{
                 circleClass[i].style.backgroundColor = "#333"
             }
             break;
+        
     }
 }
 
