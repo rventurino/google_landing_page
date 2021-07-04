@@ -101,18 +101,27 @@ let textColor = 0; // 0: default 1: white 2: dark
 let currentBackground = localStorage.getItem("currentBackground");
 let tempLogoColor = null;
 let tempBGColor = null;
-let currentLogoColor; //local storage
-let currentBGColor; //local storage
+let currentLogoColor = localStorage.getItem("currentLogoColor"); //local storage
+let currentBGColor = localStorage.getItem("currentBGColor"); //local storage
 let newColor = false;
+let bgOrFlatColor = localStorage.getItem("bgOrFlatColor")
+let localTextColor = localStorage.getItem("localTextColor")
+
 
 
 window.onload = () => {
-    if(currentBackground === "null" ){
+    if(bgOrFlatColor === "" ){
         textColor = 0;
-        colorChanger(textColor);
-        console.log("temporarily disabled")
-    } else {
+        colorChanger(localTextColor);
+    } else if(bgOrFlatColor === "bg"){
         document.body.style.backgroundImage = currentBackground;
+        colorChanger(localTextColor);
+    } else {
+        console.log(currentBGColor)
+        tempBGClear();
+        googleLogo.style.color = currentLogoColor;
+        document.body.style.backgroundColor = currentBGColor;
+        colorChanger(localTextColor);
     }
 }
 
@@ -260,6 +269,8 @@ defaultColor = () => {
     newBG = false;
     newColor = true;
     colorChanger(textColor);
+    localStorage.setItem("bgOrFlatColor", "")
+    tempBGColor = "white"
 }
 darkColorButton.addEventListener('click', () =>{
     darkColor();
@@ -272,6 +283,8 @@ darkColor = () => {
     googleLogo.style.color = darkLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = darkBGColor;
+    tempLogoColor = darkLogo;
 }
 
 blueSapphireColorButton.addEventListener('click', () =>{
@@ -285,6 +298,8 @@ blueSapphire = () => {
     googleLogo.style.color = blueSapphireLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = blueSapphireBGColor;
+    tempLogoColor = blueSapphireLogo;
 }
 
 viridianGreenColorButton.addEventListener('click', () =>{
@@ -298,6 +313,8 @@ viridianGreen = () => {
     googleLogo.style.color = viridianGreenLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = viridianGreenBGColor;
+    tempLogoColor = viridianGreenLogo;
 }
 
 middleBlueGreenColorButton.addEventListener('click', () =>{
@@ -311,6 +328,8 @@ middleBlueGreen = () => {
     googleLogo.style.color = blueSapphireLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = blueSapphireBGColor;
+    tempLogoColor = blueSapphireLogo;
 }
 
 mediumChampagneColorButton.addEventListener('click', () =>{
@@ -319,12 +338,13 @@ mediumChampagneColorButton.addEventListener('click', () =>{
 
 mediumChampagne = () => {
     textColor = 3;
-
     tempBGClear();
     document.body.style.backgroundColor = mediumChampagneBGColor;
     googleLogo.style.color = mediumChampagneLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = mediumChampagneBGColor;
+    tempLogoColor = mediumChampagneLogo;
 }
 
 gambogeColorButton.addEventListener('click', () =>{
@@ -339,6 +359,8 @@ gamboge = () => {
     googleLogo.style.color = gambogeLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = gambogeBGColor;
+    tempLogoColor = gambogeLogo;
 }
 
 mahoganyColorButton.addEventListener('click', () =>{
@@ -353,6 +375,8 @@ mahogony = () => {
     googleLogo.style.color = mahoganyLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = mahoganyBGColor;
+    tempLogoColor = mahoganyLogo;
 }
 
 rufousColorButton.addEventListener('click', () =>{
@@ -361,12 +385,13 @@ rufousColorButton.addEventListener('click', () =>{
 
 rufous = () => {
     textColor = 3;
-
     tempBGClear();
     document.body.style.backgroundColor = rufousBGColor;
     googleLogo.style.color = rufousLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = rufousBGColor;
+    tempLogoColor = rufousLogo;
 }
 
 yellowColorButton.addEventListener('click', () =>{
@@ -374,13 +399,14 @@ yellowColorButton.addEventListener('click', () =>{
 })
 
 yellow = () => {
-    textColor = 3;
-
+    textColor = 4;
     tempBGClear();
     document.body.style.backgroundColor = yellowBGColor;
     googleLogo.style.color = yellowLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = yellowBGColor;
+    tempLogoColor = yellowLogo;
 }
 
 rubyRedColorButton.addEventListener('click', () =>{
@@ -394,6 +420,8 @@ rubyRed = () => {
     googleLogo.style.color = rubyRedLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = rubyRedBGColor;
+    tempLogoColor = rubyRedLogo;
 }
 
 pinkColorButton.addEventListener('click', () =>{
@@ -407,6 +435,8 @@ pink = () => {
     googleLogo.style.color = pinkLogo;
     newBG = false;
     newColor = true;
+    tempBGColor = pinkBGColor;
+    tempLogoColor = pinkLogo;
 }
 
 tempBGClear = () => {
@@ -433,16 +463,40 @@ customizerCancel.addEventListener('click', () => {
     shortcutsMenu.classList.remove("show");
     colorsMenu.classList.remove("show");
     customUnderlay.classList.remove("show");
+    if(bgOrFlatColor === "" ){
+        textColor = 0;
+        colorChanger(textColor);
+    } else if(bgOrFlatColor === "bg"){
+        document.body.style.backgroundImage = currentBackground;
+        colorChanger(textColor);
+    } else {
+        console.log(currentBGColor)
+        tempBGClear();
+        googleLogo.style.color = currentLogoColor;
+        document.body.style.backgroundColor = currentBGColor;
+        colorChanger(textColor);
+    }
+    
 })
 
 /* Save state set in customizer */
 customizerDone.addEventListener('click', () => {
+    backgroundsMenu.classList.remove("show");
+    shortcutsMenu.classList.remove("show");
+    colorsMenu.classList.remove("show");
     customUnderlay.classList.remove("show");
     if(newBG){
         localStorage.setItem("currentBackground", tempBackground);
+        localStorage.setItem("bgOrFlatColor", "bg");
         colorChanger(textColor)
-    }
-    else if (newColor){
+        localStorage.setItem("localTextColor", textColor);
+    } else if (newColor){
+        colorChanger(textColor)
+        localStorage.setItem("bgOrFlatColor", "FlatColor");
+        localStorage.setItem("localTextColor", textColor);
+        console.log(textColor)
+        localStorage.setItem("currentLogoColor", tempLogoColor)
+        localStorage.setItem("currentBGColor", tempBGColor)
         /*
         tempLogoColor
         tempBGColor
@@ -450,6 +504,21 @@ customizerDone.addEventListener('click', () => {
         currentBGColor
         newColor
         */
+    } else {
+        if(bgOrFlatColor === "" ){
+            textColor = 0;
+            localStorage.setItem("localTextColor", textColor);
+            colorChanger(textColor);
+        } else if(bgOrFlatColor === "bg"){
+            document.body.style.backgroundImage = currentBackground;
+            localStorage.setItem("localTextColor", textColor);
+        } else {
+            localStorage.setItem("localTextColor", textColor);
+            console.log(currentBGColor)
+            tempBGClear();
+            googleLogo.style.color = currentLogoColor;
+            document.body.style.backgroundColor = currentBGColor;
+        }
     }
 })
 
@@ -490,11 +559,12 @@ colorChanger = (colorNumber) =>{
             }
             break;
         case 3: 
+            header.style.color = "white";
+            addShortcutSpan.style.color = "white";
             for(let i = 0; i < 6; i++){
                 googleLogo.children[i].classList.remove("default")
             }
-            header.style.color = "white";
-            addShortcutSpan.style.color = "white";
+            
             for(let i = 0; i < circleClass.length; i++){
                 circleClass[i].style.backgroundColor = "white"
             }
@@ -512,31 +582,3 @@ colorChanger = (colorNumber) =>{
     }
 }
 
-/* color menu */
-
-
-
-
-
-
-
-
-
-
-/*
-
-customizerModal.addEventListener('click', () =>{
-    console.log("yo")
-})
-*/
-
-/* exit and apply changes */
-
-/* background image selection 
-            <span id="g">G</span>
-            <span id="o">o</span>
-            <span id="o2">o</span>
-            <span id="g">g</span>
-            <span id="l">l</span>
-            <span id="e">e</span>
-*/

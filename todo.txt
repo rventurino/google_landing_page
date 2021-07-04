@@ -1,3 +1,28 @@
+make add shortcuts button work
+either remove tab in customizer for the shortcuts options, or add functionality to items
+add active state with blue background color to background,shortcuts,or colors depending on which is active
+
+
+
+
+let currentLogoColor; //local storage
+let currentBGColor; //local storage
+
+let tempLogoColor = null;
+let tempBGColor = null;
+
+if(bgOrFlatColor === "" ){
+        textColor = 0;
+        colorChanger(textColor);
+    } else if(bgOrFlatColor === "bg"){
+        document.body.style.backgroundImage = currentBackground;
+    } else {
+        document.body.style.backgroundImage = currentBackground;
+    }
+
+localStorage.setItem("currentLogoColor", tempLogoColor)
+        localStorage.setItem("currentBGColor", tempBGColor)
+        
 Change color: 
 
 Elements
