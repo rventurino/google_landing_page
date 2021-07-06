@@ -769,7 +769,7 @@ CUSTOMIZER MODAL
 }
 #heading h4{
     position: absolute;
-    left: 25%;
+    left: 27%;
     bottom: 10px;
 }
 #middle{
@@ -872,10 +872,139 @@ CUSTOMIZER MODAL
     height: 100%;
     pointer-events: none;
     display: none;
+    
 }
+
 #shortcuts.show{
     display: block;
 }
+
+
+
+#options{
+    display: flex;
+    width: 100%;
+    height: 80%;
+}
+
+#shortcuts .option{
+    width: 45%;
+    margin: 10px;
+}
+
+
+.description{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+#shortcuts .description h3{
+    margin-bottom: 5px;
+}
+
+#shortcuts .img{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: var(--borderGray);
+    border-radius: 10px;
+    border: 2px solid var(--borderGray);
+}
+
+#shortcuts .img:hover{
+    cursor: pointer;
+    color: lightgray;
+}
+
+#shortcuts #hide{
+    width: 100%;
+    height: 20%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+#shortcuts #hide .left{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+#shortcuts #hide .left i{
+    margin-right: 10px;
+}
+
+#shortcuts .right{
+    position: relative;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#shortcuts .right .container {
+    margin: auto;
+    text-align: center;
+  }
+  
+  /** Switch
+   -------------------------------------
+   I didn't design this, but I did customize it...
+   See the original on codepen!
+   https://codepen.io/wilsonpage/pen/cxKEs
+   
+   */
+  
+  #switch input {
+    position: absolute;
+    opacity: 0;
+  }
+ 
+  /**
+   * 1. Adjust this to size
+   */
+  
+  #switch {
+    display: inline-block;
+    font-size: 20px; /* 1 */
+    height: 1em;
+    width: 2em;
+    background: #BDB9A6;
+    border-radius: 1em;
+  }
+
+  #switch:hover{
+    cursor: pointer;
+  }
+  
+  #switch div {
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+    background: #FFF;
+    box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+    -webkit-transition: all 300ms;
+       -moz-transition: all 300ms;
+            transition: all 300ms;
+  }
+  
+  #switch input:checked + div {
+    -webkit-transform: translate3d(100%, 0, 0);
+       -moz-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  
+
+
+
+
+
 /* Colors menu */
 #color{
     width: 75%;
